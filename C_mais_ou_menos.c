@@ -6,7 +6,7 @@ int main(){
     int lop, vtm, i = 0, qnt, total = 0, dif;
     char fruit[20];
 
-    while (i < lop) {
+    while (1) {
         scanf("%d", &lop);
         if (lop == 0) {
             break;
