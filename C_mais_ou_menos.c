@@ -45,23 +45,23 @@ int main(){
             total = total + vtm;
         }
 
+        if (total < 110) {
+            dif = 110 - total;
+
+            printf("Mais %d mg", dif);
+        }
+        else if (total >= 110 && total <= 130) {
+            printf("%d mg", total);
+
+        }
+        else if (total > 130) {
+            dif = total - 130;
+
+            printf("Menos %d mg", dif);
+        }
+
         i++;
    }
-
-    if (total < 110) {
-        dif = 110 - total;
-
-        printf("Mais %d mg", dif);
-    }
-    else if (total >= 110 && total <= 130) {
-        printf("%d mg", total);
-
-    }
-    else if (total > 130) {
-        dif = total - 130;
-
-        printf("Menos %d mg", dif);
-    }
 
     return 0;
 }
