@@ -6,11 +6,7 @@ int main(){
     int lop, vtm, i, qnt, total, dif;
     char fruit[20];
 
-    while (1) {
-        total = 0;
-
-        i = 0;
-
+    while (i < lop) {
         scanf("%d", &lop);
         
         if (lop == 0) {
@@ -48,26 +44,26 @@ int main(){
             else if (strcmp(fruit, "brocolis") == 0) {
                 vtm = qnt * 34;
 
-                total += vtm;
-            }
-
-            i++;
+            total = total + vtm;
         }
+
+        i++;
+   }
 
         if (total < 110) {
             dif = 110 - total;
 
-            printf("Mais %d mg\n", dif);
-        }
-        else if (total >= 110 && total <= 130) {
-            printf("%d mg\n", total);
+        printf("Mais %d mg", dif);
+    }
+    else if (total >= 110 && total <= 130) {
+        printf("%d mg", total);
 
         }
         else if (total > 130) {
             dif = total - 130;
 
-            printf("Menos %d mg\n", dif);
-        }
+        printf("Menos %d mg", dif);
+    }
 
    }
     return 0;
