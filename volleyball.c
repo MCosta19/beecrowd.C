@@ -1,8 +1,8 @@
 # include <stdio.h>
 
 int main() {
-    int nump, s, b, a, sv, bv, av, i;
-    double ps, pb, pa, ts, tb, ta; 
+    int nump, i;
+    float  s, b, a, sv, bv, av, ts = 0, tb = 0, ta = 0, sc = 0, bc = 0, ac = 0;
     char nome[10];
 
     scanf("%d", &nump);
@@ -10,27 +10,33 @@ int main() {
     for (i = nump; i > 0; i--) {
         scanf("%s", nome);
 
-        scanf("%d %d %d", &s, &b, &a);
+        scanf("%f %f %f", &s, &b, &a);
 
-        scanf("%d %d %d", &sv, &bv, &av);
+        scanf("%f %f %f", &sv, &bv, &av);
 
-        ps = (s - sv)/100;
+        ts += s;
 
-        pb = (b - bv)/100;
+        tb += b;
 
-        pa = (a - av)/100;
+        ta += a;
 
-        ts += ps;
+        sc = sc + sv;
 
-        tb += pb;
+        bc = bc + bv;
 
-        ta += pa;
+        ac = ac + av;
 
     }
 
-    printf("Pontos de Saque: %.2f %%.\n", ts);
-    printf("Pontos de Bloqueio: %.2f %%.\n", tb);
-    printf("Pontos de Ataque: %.2f %%.\n", ta);
+    float ps = (sc / ts)*100;
+
+    float pb = (bc / tb)*100;
+
+    float pa = (ac / ta)*100;
+
+    printf("Pontos de Saque: %.2f %%.\n", ps);
+    printf("Pontos de Bloqueio: %.2f %%.\n", pb);
+    printf("Pontos de Ataque: %.2f %%.\n", pa);
 
     return 0;
 }
