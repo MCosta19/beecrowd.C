@@ -3,65 +3,72 @@
 
 int main(){
     
-    int lop, vtm, i = 0, qnt, total = 0, dif;
+    int lop, vtm, i, qnt, total, dif;
     char fruit[20];
 
-    while (i < lop) {
+    while (1) {
+        total = 0;
+
+        i = 0;
+
         scanf("%d", &lop);
+        
         if (lop == 0) {
             break;
         }
 
-        scanf("%d %s", &qnt, fruit);
+        while (i < lop){    
+            scanf("%d %[^\n]", &qnt, fruit);
 
-        if (strcmp(fruit, "suco de laranja") == 0) {
-            vtm = qnt * 120;
+            if (strcmp(fruit, "suco de laranja") == 0) {
+                vtm = qnt * 120;
                     
-            total = total + vtm;
-        }
-        else if (strcmp(fruit, "morango fresco") == 0 || strcmp(fruit, "mamao") == 0) {
-            vtm = qnt * 85;
+                total += vtm;
+            }
+            else if (strcmp(fruit, "morango fresco") == 0 || strcmp(fruit, "mamao") == 0) {
+                vtm = qnt * 85;
 
-            total = total + vtm;
-        }
-        else if (strcmp(fruit, "goiaba vermelha") == 0) {
-            vtm = qnt * 70;
+                total += vtm;
+            }
+            else if (strcmp(fruit, "goiaba vermelha") == 0) {
+                vtm = qnt * 70;
 
-            total = total + vtm;
-        }
-        else if (strcmp(fruit, "manga") == 0) {
-            vtm = qnt * 56;
+                total += vtm;
+            }
+            else if (strcmp(fruit, "manga") == 0) {
+                vtm = qnt * 56;
 
-            total = total + vtm;
-        }
-        else if (strcmp(fruit, "laranja") == 0) {
-            vtm = qnt * 50;
+                total += vtm;
+            }
+            else if (strcmp(fruit, "laranja") == 0) {
+                vtm = qnt * 50;
 
-            total = total + vtm;
-        }
-        else if (strcmp(fruit, "brocolis") == 0) {
-            vtm = qnt * 34;
+                total += vtm;
+            }
+            else if (strcmp(fruit, "brocolis") == 0) {
+                vtm = qnt * 34;
 
-            total = total + vtm;
+                total += vtm;
+            }
+
+            i++;
         }
 
-        i++;
+        if (total < 110) {
+            dif = 110 - total;
+
+            printf("Mais %d mg\n", dif);
+        }
+        else if (total >= 110 && total <= 130) {
+            printf("%d mg\n", total);
+
+        }
+        else if (total > 130) {
+            dif = total - 130;
+
+            printf("Menos %d mg\n", dif);
+        }
+
    }
-
-    if (total < 110) {
-        dif = 110 - total;
-
-        printf("Mais %d mg", dif);
-    }
-    else if (total >= 110 && total <= 130) {
-        printf("%d mg", total);
-
-    }
-    else if (total > 130) {
-        dif = total - 130;
-
-        printf("Menos %d mg", dif);
-    }
-
     return 0;
 }
